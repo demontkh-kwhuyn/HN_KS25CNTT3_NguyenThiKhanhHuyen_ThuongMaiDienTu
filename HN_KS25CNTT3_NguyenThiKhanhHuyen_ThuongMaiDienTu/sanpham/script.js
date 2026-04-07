@@ -171,11 +171,10 @@ productForm.onsubmit = (e) => {
         isValid = false;
     }
 
-    //  Ảnh
-    // if (!prodImgInp.value.trim()) {
-    //     showError(prodImgInp, 'error-prodImg', 'Vui lòng cung cấp link hình ảnh');
-    //     isValid = false;
-    // }
+    if (!prodImgInp.value.trim()) {
+        showError(prodImgInp, 'error-prodImg', 'Vui lòng cung cấp link hình ảnh');
+        isValid = false;
+    }
 
     if (!isValid) return;
 
