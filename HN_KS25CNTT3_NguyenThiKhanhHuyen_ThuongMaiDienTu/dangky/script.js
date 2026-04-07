@@ -95,7 +95,7 @@ form.addEventListener('submit', (e) => {
         });
 
         setTimeout(()=>{
-            window.location.href = "http://127.0.0.1:5500/dangnhap/index.html";
+             window.location.href = "../dangnhap/index.html";
         },1500);
         }
 
