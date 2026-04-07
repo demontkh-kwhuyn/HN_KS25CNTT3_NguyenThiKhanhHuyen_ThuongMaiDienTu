@@ -9,9 +9,9 @@ let products = JSON.parse(localStorage.getItem("products")) || [
     { id: "SP008", name: "SamSung S20 Ultra", category: "Điện thoại", price: 30000000, quantity: 15, discount: "2%", status: false },
 ];
 
-let isEditing = null; // Theo dõi sản phẩm đang chỉnh sửa
+let isEditing = null; 
 
-// 2. CÁC HÀM TIỆN ÍCH (HELPERS)
+
 const saveToStorage = () => localStorage.setItem("products", JSON.stringify(products));
 
 const notify = (icon, title) => {
@@ -41,8 +41,6 @@ function clearErrors() {
     inputs.forEach(input => input.classList.remove('invalid'));
     errorMsgs.forEach(msg => msg.innerText = '');
 }
-
-// 3. RENDER DỮ LIỆU RA BẢNG
 const renderProducts = (data = products) => {
     const tableBody = document.getElementById("productTableBody");
     if (!tableBody) return;
@@ -69,13 +67,12 @@ const renderProducts = (data = products) => {
     `).join("");
 };
 
-// 4. QUẢN LÝ POPUP (CLEAR & RESET)
 const popup = document.getElementById('productPopup');
 const productForm = document.getElementById('productForm');
 
 const togglePopup = (show) => {
     popup.style.display = show ? 'flex' : 'none';
-    clearErrors(); // Xóa sạch lỗi mỗi khi đóng/mở
+    clearErrors(); 
     if (!show) {
         isEditing = null;
         productForm.reset();
@@ -89,7 +86,7 @@ document.getElementById('openPopupBtn').onclick = () => togglePopup(true);
 document.getElementById('closePopupBtn').onclick = () => togglePopup(false);
 document.getElementById('cancelBtn').onclick = () => togglePopup(false);
 
-// 5. CHỨC NĂNG SỬA (EDIT)
+
 window.editProduct = (id) => {
     const product = products.find(p => p.id === id);
     if (!product) return;
@@ -113,7 +110,7 @@ window.editProduct = (id) => {
     document.querySelector(`input[name="status"][value="${product.status}"]`).checked = true;
 };
 
-// 6. CHỨC NĂNG XÓA (DELETE)
+
 window.deleteProduct = (id) => {
     if (products.length <= 1) {
         notify('error', 'Hệ thống phải có ít nhất 1 sản phẩm.');
@@ -139,7 +136,7 @@ window.deleteProduct = (id) => {
     });
 };
 
-// 7. XỬ LÝ SUBMIT (VALIDATE & SAVE)
+
 productForm.onsubmit = (e) => {
     e.preventDefault();
     clearErrors();
@@ -174,7 +171,7 @@ productForm.onsubmit = (e) => {
         isValid = false;
     }
 
-    // // Validate Ảnh
+    //  Ảnh
     // if (!prodImgInp.value.trim()) {
     //     showError(prodImgInp, 'error-prodImg', 'Vui lòng cung cấp link hình ảnh');
     //     isValid = false;

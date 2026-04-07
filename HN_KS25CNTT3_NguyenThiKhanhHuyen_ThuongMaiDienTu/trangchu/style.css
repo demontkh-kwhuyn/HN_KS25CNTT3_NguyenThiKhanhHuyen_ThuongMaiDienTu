@@ -72,7 +72,6 @@ header span a:hover {
      opacity: 1; 
     }
 
-/*BANNER CHÍNH */
 .banner {
     background-color: #211C24;
     display: flex;
@@ -127,7 +126,6 @@ header span a:hover {
     object-fit: contain; 
 }
 
-/*DANH MỤC SẢN PHẨM */
 .category { 
     padding: 60px 10%;
  }
@@ -161,7 +159,6 @@ header span a:hover {
     background: #e0e0e0; 
 }
 
-/*GRID SẢN PHẨM */
 .container { padding: 0 10% 60px; }
 
 .product-tabs {
@@ -188,7 +185,6 @@ header span a:hover {
     gap: 15px;
 }
 
-/*CARD SẢN PHẨM */
 .product-card {
     background: #f6f6f6;
     padding: 25px 20px;
@@ -258,7 +254,6 @@ header span a:hover {
     margin: 40px 0 20px;
     font-size: 22px;
 }
-/* Summer Banner Positioning */
 .banner-summer {
     position: relative;
     height: 450px;
@@ -320,7 +315,7 @@ header span a:hover {
     font-weight: 400;
     margin-bottom: 10px;
     letter-spacing: -1px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Verdana, sans-serif;
     line-height: 72px;
 }
 

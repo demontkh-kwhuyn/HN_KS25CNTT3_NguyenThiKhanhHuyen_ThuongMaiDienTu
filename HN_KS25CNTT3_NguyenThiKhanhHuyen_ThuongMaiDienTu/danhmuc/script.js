@@ -49,7 +49,6 @@ const renderProducts = (dataRender = products) => {
     `).join("");
 };
 
-//Popup
 const popup = document.getElementById('categoryPopup');
 const categoryForm = document.getElementById('categoryForm');
 const popupTitle = document.getElementById('popupTitle');
@@ -73,7 +72,6 @@ document.getElementById('openPopupBtn').onclick = () => {
     openPopup();
 };
 
-// Sửa, Xóa
 window.editProduct = (id) => {
     const product = products.find(p => p.id === id);
     if (!product) return;
@@ -168,7 +166,6 @@ categoryForm.onsubmit = (e) => {
     closePopup();
 };
 
-// Tìm kiếm & Lọc
 const initFilter = () => {
     const searchInput = document.querySelector(".search-box input");
     const sortSelect = document.querySelector(".sort-select"); 

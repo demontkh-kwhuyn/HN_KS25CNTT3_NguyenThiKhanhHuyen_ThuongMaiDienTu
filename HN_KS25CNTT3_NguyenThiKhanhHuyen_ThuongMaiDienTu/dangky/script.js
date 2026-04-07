@@ -13,7 +13,6 @@ function showError(input, errorId, message) {
 
 }
 
-//xóa lỗi
 function clearErrors() {
     const inputs = document.querySelectorAll('input');
     const errorMsgs = document.querySelectorAll('.error-msg');
