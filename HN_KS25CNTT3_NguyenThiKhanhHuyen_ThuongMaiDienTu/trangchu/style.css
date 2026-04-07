@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15%;
+    background: #fff;
+}
+
+header input {
+    background: #f5f5f5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.logo img {
+     height: 30px; 
+     
+    }
+.icon-item{
+    margin: 12px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+}
+header span a {
+    margin-left: 52px;
+    font-size: 14px;
+    color: #919191;
+}
+
+header span a:hover { 
+    color: #000; 
+}
+
+.subnav {
+    color: #fff;
+    background-color: #2e2e2e;
+    padding: 12px 0;
+}
+
+.subnav nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.subnav nav a {
+    color: #ffffff;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.6;
+}
+
+.subnav nav a:hover {
+     opacity: 1; 
+    }
+
+/*BANNER CHÍNH */
+.banner {
+    background-color: #211C24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15%;
+    height: 550px;
+    overflow: hidden;
+    color: white;
+}
+
+.bannerText { flex: 1; }
+
+.bannerText h2 {
+    color: #909090;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bannerText h1 {
+    font-size: 70px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.bannerText h1 b { 
+    font-weight: bold; 
+}
+
+.bannerText p {
+    color: #909090;
+    margin-bottom: 35px;
+}
+
+.bannerText button {
+    padding: 15px 45px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bannerImg { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-end; 
+}
+.bannerImg img { 
+    height: 550px; 
+    object-fit: contain; 
+}
+
+/*DANH MỤC SẢN PHẨM */
+.category { 
+    padding: 60px 10%;
+ }
+
+.category h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.categoryCard {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.listCategory {
+    background: #ededed;
+    flex: 1;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.listCategory:hover { 
+    background: #e0e0e0; 
+}
+
+/*GRID SẢN PHẨM */
+.container { padding: 0 10% 60px; }
+
+.product-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.product-tabs span {
+    font-weight: 500;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.product-tabs span.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+}
+
+/*CARD SẢN PHẨM */
+.product-card {
+    background: #f6f6f6;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #d2d2d2;
+}
+
+.product-card img {
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    height: 40px; 
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+   
+}
+.btn-buy1{
+    display: flex;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    
+
+}
+.btn-buy1:hover{
+    background-color: #909090;
+    color: #2E2E2E;
+}
+
+.section-title {
+    margin: 40px 0 20px;
+    font-size: 22px;
+}
+/* Summer Banner Positioning */
+.banner-summer {
+    position: relative;
+    height: 450px;
+    background: #2E2E2E;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+
+}
+.imgPhone{
+    position: absolute;
+    width: 200px; 
+    top: 5px;
+    right: 0px;
+    transform: rotate(0deg);
+}
+.img-watch{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.img-imac{
+    position: absolute;
+    width: 350px;
+    top: 0px;
+    left: 228px;
+}
+.img-tablet1{
+    position: absolute;
+    width: 237px;
+    height: 192px;
+    top: 4px;
+    left: 39px;
+    bottom: 0px;
+
+}
+.img-tablet2{
+    position: absolute;
+    width: 418.56px;
+    height: 262.08px;
+    bottom: 0px;
+}
+.summer-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+    color: #fff;
+    max-width: 620px;
+    width: 90%;
+    padding: 0 20px;
+}
+
+
+.summer-content h1 {
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 72px;
+}
+
+.summer-content p {
+    color: #bdbdbd;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.btn-summer {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.18s ease;
+}
+
+.btn-summer:hover { 
+    background: #fff; 
+    color: #000; 
+    transform: translateY(-2px); 
+}
+
+.footerAll {
+    background-color: #000;
+    padding: 80px 10%;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-brand { 
+    flex: 2; 
+}
+.footer-brand p { 
+    color: #cfcfcf; 
+    line-height: 1.6; 
+    margin: 20px 0;
+    max-width: 350px;
+}
+
+.footer-column { 
+    flex: 1; 
+}
+.footer-column h4 {
+     margin-bottom: 20px; 
+     font-size: 16px; 
+    }
+.footer-column ul { 
+    list-style: none;
+ }
+.footer-column li { 
+    margin-bottom: 12px; 
+}
+.footer-column a { 
+    color: #cfcfcf; 
+    font-size: 14px; 
+    transition: 0.3s;
+ }
+.footer-column a:hover {
+     color: #fff; 
+    }

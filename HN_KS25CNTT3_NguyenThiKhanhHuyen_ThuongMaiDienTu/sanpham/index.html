@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm - Ecommerce</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="dashboard">  
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./Fire.png" alt="Logo">
+                <span>Ecommerce</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../thongke/">
+                            <img src="./Home.png" alt="">
+                            <span>Thống kê</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../danhmuc/">
+                            <img src="./Cash.png"  alt="">
+                            <span>Danh mục</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../sanpham/">
+                            <img src="./Cash.1.png" alt="">
+                            <span>Sản phẩm</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <i class="fa-regular fa-bell"></i>
+                     <img src="./Icon button.png" alt="">
+                    <img src="./Ellipse 6.png" alt="User" class="avatar">
+                </div>
+            </header>
+
+            <section class="content-body">
+                <div class="title-row">
+                    <h1>Sản phẩm</h1>
+                    <button class="btn-add" id="openPopupBtn">Thêm mới sản phẩm</button>
+                </div>
+
+                <div class="filter-row">
+                    <select id="filterCategory">
+                        <option value="Tất cả">Lọc theo danh mục</option>
+                        <option value="Điện thoại">Điện thoại</option>
+                        <option value="laptop">LapTop</option>
+                        <option value="Phụ Kiền">Phụ Kiện</option>
+                    </select>
+                    <select id="filterStatus">
+                        <option value="Tất cả">Lọc theo trạng thái</option>
+                        <option value="true">Đang hoạt động</option>
+                        <option value="false">Ngừng hoạt động</option>
+                    </select>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm theo tên">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã sản phẩm ↓</th>
+                            <th>Tên sản phẩm ↓</th>
+                            <th>Giá ↓</th>
+                            <th>Số lượng</th>
+                            <th>Giảm giá</th>
+                            <th>Trạng thái</th>
+                            <th class="text-right">Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody">
+                     
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <button class="btn-page">⭠</button>
+                    <button class="btn-page">1</button>
+                    <button class="btn-page">2</button>
+                    <button class="btn-page active">3</button>
+                    <button class="btn-page">...</button>
+                    <button class="btn-page">20</button>
+                    <button class="btn-page">⭢</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="popup" id="productPopup" style="display: none;">
+    <div class="popupContent" style="width: 800px;">
+        <div class="popupHeader">
+            <h2>Thêm mới sản phẩm</h2>
+            <span class="close-btn" id="closePopupBtn">&times;</span>
+        </div>
+        <form id="productForm">
+    
+            <input type="hidden" id="editingId" value="">
+
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label>Mã sản phẩm <span class="required">*</span></label>
+                    <input type="text" id="prodId" placeholder="Nhập mã sản phẩm">
+                    <small id="error-prodId" class="error-msg" style="color:red; display:block; margin-top:4px"></small>
+                </div>
+                <div class="form-group flex-1">
+                    <label>Tên sản phẩm <span class="required">*</span></label>
+                    <input type="text" id="prodName" placeholder="Nhập tên sản phẩm">
+                    <small id="error-prodName" class="error-msg" style="color:red; display:block; margin-top:4px"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label>Danh mục <span>*</span></label>
+                    <select id="prodCategory">
+                        <option value="Điện thoại">Điện thoại</option>
+                        <option value="LapTop">LapTop</option>
+                        <option value="Phụ kiện">Phụ kiện</option>
+                    </select>
+                </div>
+                <div class="form-group flex-1">
+                    <label>Trạng thái</label>
+                    <div class="status-row">
+                        <label class="radio-item"><input type="radio" name="status" value="true" checked> <span>Đang hoạt động</span></label>
+                        <label class="radio-item"><input type="radio" name="status" value="false"> <span>Ngừng hoạt động</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label>Số lượng</label>
+                    <input type="number" id="prodQty" value="1">
+                    <small id="error-prodQty" class="error-msg" style="color:red; display:block; margin-top:4px"></small>
+                </div>
+                <div class="form-group flex-1">
+                    <label>Giá</label>
+                    <input type="number" id="prodPrice" placeholder="10.000.000">
+                    <small id="error-prodPrice" class="error-msg" style="color:red; display:block; margin-top:4px"></small>
+                </div>
+                <div class="form-group flex-1">
+                    <label>Giảm giá (%)</label>
+                    <input type="number" id="prodDiscount" value="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hình ảnh <span class="required">*</span></label>
+                <input type="text" id="prodImg" placeholder="Dán link hình ảnh vào đây">
+                <small id="error-prodImg" class="error-msg" style="color:red; display:block; margin-top:4px"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Chi tiết sản phẩm</label>
+                <textarea id="prodDesc" rows="4" placeholder="Nhập mô tả chi tiết..."></textarea>
+            </div>
+
+            <div class="popupFooter">
+                <button type="button" class="btn-cancel" id="cancelBtn">Hủy</button>
+                <button type="submit" class="btn-submit">Thêm</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

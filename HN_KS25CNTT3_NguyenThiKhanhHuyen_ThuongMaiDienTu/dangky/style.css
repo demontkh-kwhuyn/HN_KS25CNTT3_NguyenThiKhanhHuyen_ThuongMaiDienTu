@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+.signupContainer {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    background: transparent; 
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+
+.row {
+    display: flex;
+    gap: 32px;
+}
+
+.inputGroup {
+    text-align: left;
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.inputGroup label {
+    display: block;
+    font-size: 12px; 
+    font-weight:500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #efefef; 
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    color: #333;
+}
+
+.inputGroup input:focus {
+    border-color: #007bff;
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 25px 0;
+    font-size: 13px;
+    color: #444;
+    justify-content: flex-start;
+}
+
+.checkboxGroup input {
+    width: 16px;
+    height: 16px;
+    accent-color: #007bff;
+}
+
+.checkboxGroup a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-signup a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.btn-signup:hover{
+    background-color:#2563eb;
+    color: #ffffff;
+}
+.footerText {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #888;
+}
+
+.footerText a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.inputGroup input.invalid {
+    border-color: #ff4d4f !important;
+    background-color: #fff2f0;
+}
+
+.error-msg {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px; 
+}
+
+
+@media (max-width: 480px) {
+    .signupContainer {
+        padding: 24px; 
+        box-shadow: none; 
+    }
+    .row {
+        flex-direction: column; 
+        gap: 0;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}

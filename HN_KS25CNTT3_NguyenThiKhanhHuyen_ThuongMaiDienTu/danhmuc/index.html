@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Danh mục</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./Fire.png" alt="Logo">
+                <span>Ecommerce</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../thongke/">
+                            <img src="./Home.png" alt="">
+                            <span>Thống kê</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../danhmuc/">
+                            <img src="./Cash.png" alt="">
+                            <span>Danh mục</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../sanpham/">
+                            <img src="./Cash (1).png" alt="">
+                            <span>Sản phẩm</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+     
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <i class="fa-regular fa-bell"></i>
+                    <img src="./Icon button.png">
+                    <img src="./Ellipse 6.png" alt="User" class="avatar">
+                </div>
+            </header>
+
+            <section class="content-body">
+                <div class="title-row">
+                    <h1>Danh mục</h1>
+                    <button class="btn-add" id="openPopupBtn">Thêm mới danh mục</button>
+                </div>
+
+                <div class="filter-row">
+                    <select class="sort-select">
+                        <option value="Tất cả">Sắp xếp</option>
+                        <option value="a-z">Tên A-Z</option>
+                        <option value="z-a">Tên Z-A</option>
+                        <option value="oldest">Sắp xếp theo thời gian tạo (Trước-sau)</option>
+                        <option value="newest">Sắp xếp theo thời gian tạo (Sau-trước)</option>
+                    </select>
+
+                    <select>
+                        <option>Tất cả</option>
+                        <option>Đang hoạt động</option>
+                        <option>Ngừng hoạt động</option>
+                    </select>
+                    <div class="search-box">
+                        <input type="text" placeholder="Tìm kiếm danh mục theo tên">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã danh mục ↓</th>
+                            <th>Tên danh mục ↓</th>
+                            <th class="text-right">Trạng thái</th>
+                            <th class="text-right">Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--render từ JS -->
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <button class="btn-page">⭠</button>
+                    <button class="btn-page">1</button>
+                    <button class="btn-page">2</button>
+                    <button class="btn-page active">3</button>
+                    <button class="btn-page">4</button>
+                    <span>...</span>
+                    <button class="btn-page">20</button>
+                    <button class="btn-page">⭢</button>
+                </div>
+            </section>
+        </main>
+    </div>
+<div class="popup" id="categoryPopup" style="display: none;">
+    <div class="popupContent">
+        <form id="categoryForm"> 
+            <input type="hidden" id="editIndex" value="">
+            
+            <div class="popupHeader">
+                <h2 id="popupTitle">Thêm mới danh mục</h2>
+         
+                <button type="button" onclick="closePopup()" style="cursor:pointer; background:none; border:none; font-size:20px;">×</button>
+            </div>
+
+            <div class="form-group">
+                <label>Mã danh mục <span class="required">*</span></label>
+                <input type="text" id="catId" placeholder="Nhập mã danh mục" >
+            </div>
+
+            <div class="form-group">
+                <label>Tên danh mục <span class="required">*</span></label>
+                <input type="text" id="catName" placeholder="Nhập tên danh mục" >
+            </div>
+
+            <div class="form-group">
+                <label>Trạng thái</label>
+                <div class="status-row">
+                    <label class="radio-item">
+                        <input type="radio" name="status" value="true" id="statusActive" checked> 
+                        <span>Đang hoạt động</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="status" value="false" id="statusInactive"> 
+                        <span>Ngừng hoạt động</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="popupFooter">
+                <button type="button" class="btn-cancel" onclick="closePopup()">Hủy</button>
+                <button type="submit" class="btn-submit" id="btnSave">Lưu</button>
+            </div>
+        </form> 
+    </div>
+</div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

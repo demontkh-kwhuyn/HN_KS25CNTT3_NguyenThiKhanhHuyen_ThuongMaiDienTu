@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signupContainer {
+    width: 100%;
+    max-width: 420px; 
+    padding: 20px;
+    text-align: center;
+}
+
+/*Tiêu đề */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Ô nhập liệu */
+.row {
+    display: flex;
+    flex-direction: column; /* Xếp chồng Email và Mật khẩu theo chiều dọc */
+    gap: 20px;
+}
+
+.inputGroup {
+    text-align: left;
+}
+
+.inputGroup label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-size: 15px;
+    outline: none;
+}
+
+.inputGroup input:focus {
+    border-color: #2563eb;
+}
+
+.checkboxGroup {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+}
+
+.checkboxGroup a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Nút Đăng nhập */
+.btn-signup {
+    width: 100%;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #1d4ed8;
+}
+
+/*Footer */
+.footerText {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+}
+.inputGroup input.invalid {
+    border-color: #ff4d4f !important;
+    background-color: #fff2f0;
+}
+
+.error-msg {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px; 
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+<body>
+    <div class="signupContainer">
+        <h1>Đăng ký tài khoản</h1>
+        <p class="subtitle">Đăng ký tài khoản để sử dụng dịch vụ</p>
+        <form id="signupForm" novalidate>
+            <div class="row">
+                <div class="inputGroup">
+                    <label>Họ và tên đệm</label>
+                    <input id="userName" type="text" placeholder="Họ và tên đệm">
+                    <div class="error-msg" id="error-userName"></div>
+                </div>
+                <div class="inputGroup">
+                    <label>Tên</label>
+                    <input id="name" type="text" placeholder="Tên">
+                    <div class="error-msg" id="error-name"></div>
+                </div>
+            </div>
+            <div class="inputGroup">
+                <label>Email</label>
+                <input id="email" type="text" placeholder="you@company.com">
+                <div class="error-msg" id="error-email"></div>
+            </div>
+            <div class="inputGroup">
+                <label>Mật khẩu</label>
+                <input id="password" type="password" placeholder="••••••••">
+                <div class="error-msg" id="error-password"></div>
+            </div>
+            <div class="inputGroup">
+                <label>Xác nhận mật khẩu</label>
+                <input id="requiredPasword" type="password" placeholder="••••••••">
+                <div class="error-msg" id="error-requiredPasword"></div>
+            </div>
+            
+            <div class="checkboxWrapper">
+                <div class="checkboxGroup">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">Bạn đồng ý với <a href="#">Chính sách và điều khoản</a></label>
+                </div>
+                <div class="error-msg" id="error-terms" style="text-align: left; margin-top: -20px; margin-bottom: 20px;"></div>
+            </div>
+
+            <button type="submit" class="btn-signup" style="color: #fff;">Đăng ký</button>
+        </form>
+        <p class="footerText">Bạn đã có tài khoản? <a href="../dangnhap/" style="text-decoration: none;">Đăng nhập</a></p>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
